@@ -4,8 +4,8 @@ Materia: Modelado y Programación.
 
 ## Descripción.
 La práctica consiste en diseñar un programa que simule un combate tipo Smash Bros en java empleando los siguientes patrones de diseño:
-* `Strategy: ` Para estructurar una linea de herencia entre varios algoritmos empleando interfaces y sus implementaciones, el objetivo es que se puedan modificar ciertos objetos en tiempo de ejecución y tambien promover la modularidad [(more info)](https://refactoring.guru/es/design-patterns/strategy).
-* `Observer: ` Para establecer una relación observadores-objeto donde cada novedad del objeto representa una actualización de información para los observadores, el objetivo es que el sujeto sea un ente independiente de sus observadores [(more info)](https://refactoring.guru/es/design-patterns/observer).
+* `Strategy:` Para estructurar una linea de herencia entre varios algoritmos empleando interfaces y sus implementaciones, el objetivo es que se puedan modificar ciertos objetos en tiempo de ejecución y tambien promover la modularidad [(more info)](https://refactoring.guru/es/design-patterns/strategy).
+* `Observer:` Para establecer una relación observadores-objeto donde cada novedad del objeto representa una actualización de información para los observadores, el objetivo es que el sujeto sea un ente independiente de sus observadores [(more info)](https://refactoring.guru/es/design-patterns/observer).
 
 ## Equipo: Christian.
 Colaboradores:
