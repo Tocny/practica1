@@ -29,7 +29,7 @@ $ git checkout nombre
 Repito, esto es AHUEVO.
 
 ### En caso de errores de autenticación.
-Cuando clonen o pusheen en el repositorio es posible que se topen con una cosa como esta cuando les pida la contraseña:
+Cuando clonen o pusheen en el repositorio (en su rama) es posible que se topen con una cosa como esta cuando les pida la contraseña:
 ```
 $ tocny@debian-Marco:~/Documentos/Code/Modelado/p1/practica1$ git push origin marco
 $ Username for 'https://github.com': Tocny
