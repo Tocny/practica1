@@ -34,7 +34,7 @@ $ fatal: Autenticación falló para 'https://github.com/Tocny/practica1/'
 ```
 Esto es, como se puede leer, porque ahora github no usa la contraseña de su cuenta para autentificarlos. Ahora se utiliza un token.
 
-Si presentan este problema wachense [(este video)](https://www.youtube.com/watch?v=2nzOI-ynXF4&t=308s), donde pueden ver como generarlo y como usarlo, conserven bien ese token para que no anden batallando.
+Si presentan este problema wachense [este video](https://www.youtube.com/watch?v=2nzOI-ynXF4&t=308s), donde pueden ver como generarlo y como usarlo, conserven bien ese token para que no anden batallando.
 
 
 ## Equipo: Christian.
