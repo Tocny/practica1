@@ -16,7 +16,7 @@ public class Copiar extends PoderAbstracto{
     }
 
     @Override public String nombrePoder(){
-        return "Copiar.";
+        return "Copiar";
     }
 
 }
