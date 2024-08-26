@@ -119,7 +119,7 @@ public class Simulador{
      */
     private Personaje ganador(){
         for(Personaje personaje : personajes){
-            if(personaje.getHP() > 1){
+            if(personaje.getHP() > 0){
                 return personaje;
             }
         }
