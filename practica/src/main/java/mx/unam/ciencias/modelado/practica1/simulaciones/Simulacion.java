@@ -90,8 +90,8 @@ public class Simulador{
         String evento;
 
         //Acción aleatoria.
-        int indiceAleatorio = random.nextInt(personajes.size());
         List<Accion> acciones = personaje.getAcciones();
+        int indiceAleatorio = random.nextInt(acciones.size());
         Accion accionAleatoria = acciones.get(indiceAleatorio);
 
         //Para los casos respectivos de la accion seleccionada.
