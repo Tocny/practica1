@@ -102,7 +102,7 @@ public class Simulador{
 
             evento = personaje.ejecutaAccion(accion, objetivo);
 
-            if(objetivoSeDefiende()){
+            if(objetivoSeDefiende){
                 evento += "\n" + objetivo.defenza(personaje);
             }
 

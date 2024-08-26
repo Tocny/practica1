@@ -44,7 +44,7 @@ public class Espectador implements Observador{
         StringBuilder sb = new StringBuilder();
         for(String evento: bitacora){
             sb.append(evento);
-            sb.append("\n")
+            sb.append("\n");
         }
         return sb;
     }
