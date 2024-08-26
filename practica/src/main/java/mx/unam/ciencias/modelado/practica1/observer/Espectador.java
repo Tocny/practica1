@@ -46,6 +46,6 @@ public class Espectador implements Observador{
             sb.append(evento);
             sb.append("\n");
         }
-        return sb;
+        return sb.toString();
     }
 }

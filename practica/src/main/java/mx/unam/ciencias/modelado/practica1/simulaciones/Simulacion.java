@@ -3,7 +3,7 @@ package mx.unam.ciencias.modelado.practica1.simulaciones;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Random;
-import mx.unam.ciencias.modelado.practica1.observer;
+import mx.unam.ciencias.modelado.practica1.observer.*;
 
 public class Simulador{
     /**Instancia de combate. */
