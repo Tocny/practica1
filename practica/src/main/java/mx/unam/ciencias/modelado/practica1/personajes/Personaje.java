@@ -34,8 +34,6 @@ public class Personaje{
             Poder poder = poderes.get(indice);
             evento = poder.ejecutaPoder(this, objetivo);
         }
-        
-        evento += ("(hp = " + hp + ")");
 
         return evento;
     }
@@ -104,6 +102,10 @@ public class Personaje{
 
     public void setNombre(String nombre){
         this.nombre = nombre;
+    }
+
+    public String getEstado(){
+        return nombre + "(hp:" + hp + ")";
     }
 
 }

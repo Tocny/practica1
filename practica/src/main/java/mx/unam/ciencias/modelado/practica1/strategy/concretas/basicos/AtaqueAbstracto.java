@@ -14,7 +14,7 @@ public abstract class AtaqueAbstracto implements Ataque{
     /**Implementacion del ataque. */
     @Override public String ejecutaAtaque(Personaje emisor, Personaje objetivo){
         objetivo.recibeDanio(DANIO);
-        return (emisor.getNombre() + " casteó " + nombreAtaque() + " contra " + objetivo.getNombre());
+        return (emisor.getEstado() + " casteó " + nombreAtaque() + " contra " + objetivo.getEstado());
     }
 
     /**Getter del nombre de la defenza. */

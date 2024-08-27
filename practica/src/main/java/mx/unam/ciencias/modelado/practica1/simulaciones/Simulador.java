@@ -102,7 +102,7 @@ public class Simulador{
         if(accionAleatoria instanceof Ataque || accionAleatoria instanceof Poder){
             //Objetivo aleatorio.
             Personaje objetivo = objetivoAleatorio(personaje);
-            boolean objetivoSeDefiende = random.nextBoolean();
+            boolean objetivoSeDefiende = random.nextBoolean() && (objetivo.getHP() > 0);
 
             evento = personaje.ejecutaAccion(accionAleatoria, objetivo);
 

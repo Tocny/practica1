@@ -9,6 +9,8 @@ public class Copiar extends PoderAbstracto{
     private Personaje personaje;
     /**Nombre particular del poder. */
     private String nombrePoder;
+    /**La efectividad del poder sobre otro Personaje. */
+    private String estadoDeEfectividad = "";
 
     /**Para este poder si necesitamos una relacion fuerte entre las clases. */
     public Copiar(Personaje personaje, String nombrePoder){
@@ -25,12 +27,14 @@ public class Copiar extends PoderAbstracto{
             String nombre = personaje.getNombre();
             personaje = objetivo;
             personaje.setNombre(nombre);
+        } else{
+            estadoDeEfectividad = "(inefectivo)";
         }
     }
 
     /**Implementación del método nombrePoder. */
     @Override public String nombrePoder(){
-        return nombrePoder;
+        return nombrePoder + estadoDeEfectividad;
     }
 
 }
