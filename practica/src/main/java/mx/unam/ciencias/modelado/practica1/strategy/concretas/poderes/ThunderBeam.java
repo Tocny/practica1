@@ -7,9 +7,7 @@ public class ThunderBeam extends PoderAbstracto{
 
     private double danioPoder = 20;
 
-    public ThunderBeam(Personaje personaje){
-        super(personaje);
-    }
+    public ThunderBeam(){}
 
     @Override public void poderConcreto(Personaje objetivo){
         objetivo.recibeDanio(danioPoder);

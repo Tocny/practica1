@@ -7,14 +7,15 @@ public class Curacion extends PoderAbstracto{
 
     private double curacion = 15;
 
-    public Curacion(Personaje personaje){
-        super(personaje);
-    }
+    /**Constructor de la clase. */
+    public Curacion(){}
 
+    /**Implementacion concreta del poder. */
     @Override public void poderConcreto(Personaje objetivo){
         objetivo.recibeCuracion(curacion);
     }
 
+    /**Implementación del getter del nombre. */
     @Override public String nombrePoder(){
         return "Curacion";
     }

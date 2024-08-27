@@ -7,9 +7,7 @@ public class Azote extends PoderAbstracto{
 
     private double danioPoder = 20;
 
-    public Azote(Personaje personaje){
-        super(personaje);
-    }
+    public Azote(){}
 
     @Override public void poderConcreto(Personaje objetivo){
         objetivo.recibeDanio(danioPoder);

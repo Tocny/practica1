@@ -8,27 +8,13 @@ import mx.unam.ciencias.modelado.practica1.personajes.Personaje;
  * Todas las defenzas funcionan igual, por eso se abstrae esta clase.
  */
 public abstract class AtaqueAbstracto implements Ataque{
-    /**Personaje que va a atacar. */
-    private Personaje personaje;
     /**Daño del ataque. */
-    private static final double DANIO = 1;
-
-    /**Constructor de la clase
-     * @param personaje un personaje que deberá defenderse.
-     */
-    public AtaqueAbstracto(Personaje personaje) {
-        this.personaje = personaje;
-    }
+    private final double DANIO = 1;
 
     /**Implementacion del ataque. */
-    @Override public String ejecutaAtaque(Personaje objetivo){
+    @Override public String ejecutaAtaque(Personaje emisor, Personaje objetivo){
         objetivo.recibeDanio(DANIO);
-        return (personaje.getNombre() + " casteó " + nombreAtaque() + " contra " + objetivo.getNombre());
-    }
-
-    /**Setter del personaje asociado. */
-    public void setPersonaje(Personaje personaje){
-        this.personaje = personaje;
+        return (emisor.getNombre() + " casteó " + nombreAtaque() + " contra " + objetivo.getNombre());
     }
 
     /**Getter del nombre de la defenza. */

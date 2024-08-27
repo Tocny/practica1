@@ -7,9 +7,7 @@ public class ShadowBlade extends PoderAbstracto{
 
     private double danioPoder = 20;
 
-    public ShadowBlade(Personaje personaje){
-        super(personaje);
-    }
+    public ShadowBlade(){}
 
     @Override public void poderConcreto(Personaje objetivo){
         objetivo.recibeDanio(danioPoder);

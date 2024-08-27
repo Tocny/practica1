@@ -7,9 +7,7 @@ public class MetalBlade extends PoderAbstracto{
 
     private double danioPoder = 20;
 
-    public MetalBlade(Personaje personaje){
-        super(personaje);
-    }
+    public MetalBlade(){}
 
     @Override public void poderConcreto(Personaje objetivo){
         objetivo.recibeDanio(danioPoder);

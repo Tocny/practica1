@@ -5,7 +5,7 @@ import java.util.List;
 import java.util.Random;
 import mx.unam.ciencias.modelado.practica1.observer.*;
 import mx.unam.ciencias.modelado.practica1.personajes.Personaje;
-import mx.unam.ciencias.modelado.practica1.strategy.interfaces.Accion;
+import mx.unam.ciencias.modelado.practica1.strategy.interfaces.*;
 
 public class Simulador{
     /**Instancia de combate. */
@@ -34,7 +34,9 @@ public class Simulador{
         }
 
         Personaje ganador = ganador();
-        ganador.setGanador(true);
+        String evento = "<<<<" + ganador.getNombre() +  ">>>> Ha ganado el combate.";
+        combate.notificarObservadores(evento);
+        combate.finDelCombate();
     }
 
     /**
@@ -89,7 +91,7 @@ public class Simulador{
      */
     private void accionAleatoria(Personaje personaje){
         //Una cadena que representa un evento.
-        String evento;
+        String evento = "";
 
         //Acción aleatoria.
         List<Accion> acciones = personaje.getAcciones();
@@ -102,15 +104,19 @@ public class Simulador{
             Personaje objetivo = objetivoAleatorio(personaje);
             boolean objetivoSeDefiende = random.nextBoolean();
 
-            evento = personaje.ejecutaAccion(accion, objetivo);
+            evento = personaje.ejecutaAccion(accionAleatoria, objetivo);
 
             if(objetivoSeDefiende){
                 evento += "\n" + objetivo.defenza(personaje);
             }
 
-        } else if(accionAleatoria instanceof agarraItem){
+            if(objetivo.getHP() <= 0){
+                evento += "\n" + objetivo.getNombre() + " Ha muerto por el ataque de " + personaje.getNombre();
+            }
+
+        } /*else if(accionAleatoria instanceof agarraItem){
             evento = personaje.ejecutaAccion(accion, objetivo);
-        }
+        }*/
 
         combate.notificarObservadores(evento);
     }
@@ -122,6 +128,7 @@ public class Simulador{
     private Personaje ganador(){
         for(Personaje personaje : personajes){
             if(personaje.getHP() > 0){
+                personaje.setGanador(true);
                 return personaje;
             }
         }

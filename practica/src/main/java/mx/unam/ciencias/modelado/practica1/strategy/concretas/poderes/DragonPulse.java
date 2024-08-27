@@ -7,9 +7,7 @@ public class DragonPulse extends PoderAbstracto{
 
     private double danioPoder = 20;
 
-    public DragonPulse(Personaje personaje){
-        super(personaje);
-    }
+    public DragonPulse(){}
 
     @Override public void poderConcreto(Personaje objetivo){
         objetivo.recibeDanio(danioPoder);

@@ -7,9 +7,7 @@ public class CampoElectrico extends PoderAbstracto{
 
     private double danioPoder = 20;
 
-    public CampoElectrico(Personaje personaje){
-        super(personaje);
-    }
+    public CampoElectrico(){}
 
     @Override public void poderConcreto(Personaje objetivo){
         objetivo.recibeDanio(danioPoder);

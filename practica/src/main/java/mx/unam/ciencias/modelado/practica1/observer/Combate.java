@@ -38,4 +38,10 @@ public class Combate implements Sujeto{
         }
     }
 
+    public void finDelCombate(){
+        for(Observador espectador : espectadores){
+            espectador.guardarActualizaciones();
+        }
+    }
+
 }

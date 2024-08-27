@@ -1,5 +1,6 @@
 package mx.unam.ciencias.modelado.practica1.personajes;
 
+import mx.unam.ciencias.modelado.practica1.strategy.interfaces.*;
 import java.util.ArrayList;
 
 public class Personaje{
@@ -17,6 +18,43 @@ public class Personaje{
         this.franquicia = franquicia;
         poderes = new ArrayList<>();
         ganador = false;
+    }
+
+    public String ejecutaAccion(Accion accion, Personaje objetivo){
+        String evento = "";
+
+        if(accion == this.defenza){
+            evento = defenza(objetivo);
+
+        } else if(accion == this.ataque){
+            evento = ataque(objetivo);
+
+        } else if(poderes.contains(accion)){
+            int indice = poderes.indexOf(accion);
+            Poder poder = poderes.get(indice);
+            evento = poder.ejecutaPoder(this, objetivo);
+        }
+        
+        evento += ("(hp = " + hp + ")");
+
+        return evento;
+    }
+
+    public String defenza(Personaje agresor){
+        return defenza.ejecutaDefenza(this, agresor);
+    }
+
+    public String ataque(Personaje objetivo){
+        return ataque.ejecutaAtaque(this, objetivo);
+    }
+
+    public ArrayList<Accion> getAcciones(){
+        ArrayList<Accion> lista = new ArrayList<Accion>();
+        lista.add(ataque);
+        for(Poder poder : poderes){
+            lista.add((Accion) poder);
+        }
+        return lista;
     }
 
     public Franquicia getFranquicia(){
@@ -39,6 +77,10 @@ public class Personaje{
         this.ganador = ganador;
     }
 
+    public boolean esGanador(){
+        return ganador == true;
+    }
+
     public void agregarPoder(Poder poder){
         poderes.add(poder);
     }
@@ -49,6 +91,7 @@ public class Personaje{
 
     public void recibeDanio(double danio){
         hp -= danio;
+        System.out.println(nombre + " : " + hp);
     }
 
     public void recibeCuracion(double curacion){
@@ -57,6 +100,10 @@ public class Personaje{
 
     public String getNombre(){
         return nombre;
+    }
+
+    public void setNombre(String nombre){
+        this.nombre = nombre;
     }
 
 }

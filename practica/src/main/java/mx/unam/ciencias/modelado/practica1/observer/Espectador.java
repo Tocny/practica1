@@ -1,5 +1,7 @@
 package mx.unam.ciencias.modelado.practica1.observer;
 
+import mx.unam.ciencias.modelado.practica1.personajes.Personaje;
+import mx.unam.ciencias.modelado.practica1.files.ReaderWriter;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -28,12 +30,13 @@ public class Espectador implements Observador{
     }
 
     /**Método para finalizar el combate con un mensaje personalizado. */
-    public void finDelCombate(){
+    public void guardarActualizaciones(){
         if(personajeFavorito.esGanador()){
-            bitacora.add(personajeFavorito.nombre() + "ha ganado el combate.");
+            bitacora.add(personajeFavorito.getNombre() + " ha ganado el combate.");
         }else{
-            bitacora.add(personajeFavorito.nombre() + "ha perdido el combate.");
+            bitacora.add(personajeFavorito.getNombre() + " ha perdido el combate.");
         }
+        generaArchivo();
     }
 
     /**
@@ -47,5 +50,10 @@ public class Espectador implements Observador{
             sb.append("\n");
         }
         return sb.toString();
+    }
+
+    /**Método para guardar la bitácora en una archivo. */
+    public void generaArchivo(){
+        ReaderWriter.write(toString(), id);
     }
 }
