@@ -10,7 +10,7 @@ public class DustCrusher extends DefenzaAbstracta{
         super(personaje);
     }
 
-    @Override nombreDefenza(){
+    @Override public String nombreDefenza(){
         return "DustCrusher";
     }
 }

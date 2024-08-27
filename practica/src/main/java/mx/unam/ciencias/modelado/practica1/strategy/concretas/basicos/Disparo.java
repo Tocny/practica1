@@ -10,7 +10,7 @@ public class Disparo extends AtaqueAbstracto{
         super(personaje);
     }
 
-    @Override nombreAtaque(){
+    @Override public String nombreAtaque(){
         return "Disparo";
     }
 

@@ -4,6 +4,8 @@ import java.util.ArrayList;
 import java.util.List;
 import java.util.Random;
 import mx.unam.ciencias.modelado.practica1.observer.*;
+import mx.unam.ciencias.modelado.practica1.personajes.Personaje;
+import mx.unam.ciencias.modelado.practica1.strategy.interfaces.Accion;
 
 public class Simulador{
     /**Instancia de combate. */
