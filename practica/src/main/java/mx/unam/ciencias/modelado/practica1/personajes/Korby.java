@@ -13,5 +13,6 @@ public class Korby extends Personaje{
         super.agregarPoder(new Copiar(this, "Deborar"));
         super.agregarPoder(new CampoElectrico());
         super.agregarPoder(new Fuego());
+        super.agregarPoder(new Hielo());
     }
 }

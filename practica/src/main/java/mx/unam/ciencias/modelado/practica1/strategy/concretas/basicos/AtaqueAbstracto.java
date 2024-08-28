@@ -9,14 +9,22 @@ import mx.unam.ciencias.modelado.practica1.personajes.Personaje;
  */
 public abstract class AtaqueAbstracto implements Ataque{
     /**Daño del ataque. */
-    private final double DANIO = 1;
+    private double danio = 5;
 
     /**Implementacion del ataque. */
     @Override public String ejecutaAtaque(Personaje emisor, Personaje objetivo){
-        objetivo.recibeDanio(DANIO);
+        objetivo.recibeDanio(danio);
         return (emisor.getEstado() + " casteó " + nombreAtaque() + " contra " + objetivo.getEstado());
     }
 
+    @Override public double getDanio(){
+        return danio;
+    }
+
+    @Override public void setDanio(double danio){
+        this.danio = danio;
+    }
+
     /**Getter del nombre de la defenza. */
-    protected abstract String nombreAtaque();
+    @Override public abstract String nombreAtaque();
 }

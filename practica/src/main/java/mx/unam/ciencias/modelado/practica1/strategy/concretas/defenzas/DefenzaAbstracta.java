@@ -12,7 +12,7 @@ import mx.unam.ciencias.modelado.practica1.personajes.Personaje;
  */
 public abstract class DefenzaAbstracta implements Defenza{
     /**Daño reducido */
-    private static final double DANIO_REDUCIDO = 1;
+    private static final double DANIO_REDUCIDO = 5;
 
     /**Constructor de la clase */
     public DefenzaAbstracta() {}
@@ -24,5 +24,5 @@ public abstract class DefenzaAbstracta implements Defenza{
     }
 
     /**Getter del nombre de la defenza. */
-    protected abstract String nombreDefenza();
+    @Override public abstract String nombreDefenza();
 }

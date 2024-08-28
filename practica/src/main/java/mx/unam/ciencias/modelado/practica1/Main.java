@@ -7,8 +7,8 @@ import mx.unam.ciencias.modelado.practica1.observer.*;
 import java.util.ArrayList;
 
 public class Main{
-    public static void main(String[] args){
-        
+
+    public static void simulacion(){
         Personaje kirby = new Korby();
         Personaje megaman = new MeganMan();
         Personaje dittuu = new Dittuu();
@@ -19,7 +19,7 @@ public class Main{
 
         Espectador tilin = new Espectador("tilin", kirby);
         Espectador pepe = new Espectador("pepe", megaman);
-        Espectador coca = new Espectador("pepe", megaman);
+        Espectador coca = new Espectador("coca", dittuu);
         Combate combate = new Combate();
         combate.registrarObservador(tilin);
         combate.registrarObservador(pepe);
@@ -27,6 +27,11 @@ public class Main{
 
         Simulador simulacion = new Simulador(combate, personajes);
         simulacion.simular();
+    }
 
+    public static void main(String[] args){
+        simulacion();
+        simulacion();
+        simulacion();
     }
 }

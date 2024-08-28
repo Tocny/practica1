@@ -13,5 +13,6 @@ public class MeganMan extends Personaje{
         super.agregarPoder(new Copiar(this, "Derrotar"));
         super.agregarPoder(new ShadowBlade());
         super.agregarPoder(new ThunderBeam());
+        super.agregarPoder(new MetalBlade());
     }
 }

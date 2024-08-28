@@ -18,8 +18,8 @@ public abstract class PoderAbstracto implements Poder{
     }
 
     /**Getter del nombre del poder. */
-    protected abstract String nombrePoder();
+    @Override public abstract String nombrePoder();
 
     /**Método concreto del poder y su uso particular. */
-    protected abstract void poderConcreto(Personaje objetivo);
+    @Override public abstract void poderConcreto(Personaje objetivo);
 }

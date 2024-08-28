@@ -13,5 +13,6 @@ public class Dittuu extends Personaje{
         super.agregarPoder(new Copiar(this, "Mimetismo"));
         super.agregarPoder(new Azote());
         super.agregarPoder(new DragonPulse());
+        super.agregarPoder(new ShadowBall());
     }
 }

@@ -3,20 +3,20 @@ package mx.unam.ciencias.modelado.practica1.strategy.concretas.poderes;
 import mx.unam.ciencias.modelado.practica1.personajes.Personaje;
 import mx.unam.ciencias.modelado.practica1.strategy.interfaces.Poder;
 
-public class Curacion extends PoderAbstracto{
+public class Hielo extends PoderAbstracto{
 
-    private double curacion = 15;
+    private double danioPoder = 10;
 
     /**Constructor de la clase. */
-    public Curacion(){}
+    public Hielo(){}
 
     /**Implementacion concreta del poder. */
     @Override public void poderConcreto(Personaje objetivo){
-        objetivo.recibeCuracion(curacion);
+        objetivo.recibeDanio(danioPoder);
     }
 
     /**Implementación del getter del nombre. */
     @Override public String nombrePoder(){
-        return "Curacion";
+        return "Hielo";
     }
 }

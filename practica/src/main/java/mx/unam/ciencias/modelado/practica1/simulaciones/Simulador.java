@@ -6,12 +6,15 @@ import java.util.Random;
 import mx.unam.ciencias.modelado.practica1.observer.*;
 import mx.unam.ciencias.modelado.practica1.personajes.Personaje;
 import mx.unam.ciencias.modelado.practica1.strategy.interfaces.*;
+import mx.unam.ciencias.modelado.practica1.strategy.concretas.objetos.*;
 
 public class Simulador{
     /**Instancia de combate. */
     private Combate combate;
     /**Lista de personajes. */
     private List<Personaje> personajes;
+    /**Objetos que pueden desplegarse durante la simulación. */
+    private List<Accion> objetos;
     /**Instancia de random. */
     private Random random;
 
@@ -24,6 +27,8 @@ public class Simulador{
         this.combate = combate;
         this.personajes = personajes;
         this.random = new Random();
+        objetos = new ArrayList<>();
+        listaObjetos();
     }
 
     /**Método que empieza la simulación aleatoria. */
@@ -37,6 +42,12 @@ public class Simulador{
         String evento = "<<<<" + ganador.getNombre() +  ">>>> Ha ganado el combate.";
         combate.notificarObservadores(evento);
         combate.finDelCombate();
+    }
+
+    private void listaObjetos(){
+        objetos.add(new SuperMushroom());
+        objetos.add(new Panacea());
+        objetos.add(new BombaSmash(personajes));
     }
 
     /**
@@ -95,6 +106,7 @@ public class Simulador{
 
         //Acción aleatoria.
         List<Accion> acciones = personaje.getAcciones();
+        acciones.addAll(objetos);
         int indiceAleatorio = random.nextInt(acciones.size());
         Accion accionAleatoria = acciones.get(indiceAleatorio);
 
@@ -114,9 +126,10 @@ public class Simulador{
                 evento += "\n" + objetivo.getNombre() + " Ha muerto por el ataque de " + personaje.getNombre();
             }
 
-        } /*else if(accionAleatoria instanceof agarraItem){
-            evento = personaje.ejecutaAccion(accion, objetivo);
-        }*/
+        } else if(accionAleatoria instanceof Objeto){
+            Objeto objeto = (Objeto) accionAleatoria;
+            evento = objeto.consumirObjeto(personaje);
+        }
 
         combate.notificarObservadores(evento);
     }

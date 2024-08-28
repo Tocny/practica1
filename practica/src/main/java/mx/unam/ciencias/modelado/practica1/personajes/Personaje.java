@@ -59,6 +59,10 @@ public class Personaje{
         return franquicia;
     }
 
+    public Ataque getAtaque(){
+        return ataque;
+    }
+
     public void setAtaque(Ataque ataque){
         this.ataque = ataque;
     }
