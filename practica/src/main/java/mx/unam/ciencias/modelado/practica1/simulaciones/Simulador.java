@@ -20,8 +20,8 @@ public class Simulador{
 
     /**
      * Constructor de la clase, inicializa los atributos.
-     * @param combate
-     * @param personajes
+     * @param combate una instancia de {@link Combate}
+     * @param personajes una lista de instancias de {@link Personaje}
      */
     public Simulador(Combate combate, List<Personaje> personajes){
         this.combate = combate;
@@ -47,6 +47,9 @@ public class Simulador{
         combate.finDelCombate();
     }
 
+    /**
+     * Método que construye una lista de objetos que podran ser usados en la simulación.
+     */
     private void listaObjetos(){
         objetos.add(new SuperMushroom());
         objetos.add(new Panacea());

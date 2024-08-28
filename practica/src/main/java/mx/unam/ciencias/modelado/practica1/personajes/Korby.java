@@ -4,8 +4,9 @@ import mx.unam.ciencias.modelado.practica1.strategy.concretas.basicos.*;
 import mx.unam.ciencias.modelado.practica1.strategy.concretas.defenzas.*;
 import mx.unam.ciencias.modelado.practica1.strategy.concretas.poderes.*;
 
-
+/**Clase del personaje Korby. */
 public class Korby extends Personaje{
+    /**Constructor de la clase, construye al personaje acorde a la clase  {@link Personaje}*/
     public Korby(){
         super("Korby", Franquicia.Nientiendo);
         super.setAtaque(new Machetazo());
