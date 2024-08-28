@@ -6,7 +6,7 @@
   <modelVersion>4.0.0</modelVersion>
   <groupId>mx.unam.ciencias.modelado.practica1</groupId>
   <artifactId>proyecto</artifactId>
-  <version>EDD</version>
+  <version>MYP</version>
   <packaging>jar</packaging>
 
   <name>Práctica 1</name>
@@ -67,7 +67,7 @@
 	<configuration>
 	  <archive>
 	    <manifest>
-	      <mainClass>mx.unam.ciencias.modelado.practica1.HolaMundo</mainClass>
+	      <mainClass>mx.unam.ciencias.modelado.practica1.Main</mainClass>
 	    </manifest>
 	  </archive>
 	</configuration>
@@ -103,8 +103,8 @@
           <author>false</author>
           <version>false</version>
           <use>true</use>
-          <windowtitle>Estructuras de Datos</windowtitle>
-          <doctitle><![CDATA[<h1>Estructuras de Datos</h1>]]></doctitle>
+          <windowtitle>Modelado y Programacion</windowtitle>
+          <doctitle><![CDATA[<h1>Modelado y Programación</h1>]]></doctitle>
         </configuration>
       </plugin>
 
