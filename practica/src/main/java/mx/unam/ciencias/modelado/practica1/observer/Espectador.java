@@ -5,6 +5,9 @@ import mx.unam.ciencias.modelado.practica1.files.ReaderWriter;
 import java.util.ArrayList;
 import java.util.List;
 
+/**
+ * Clase que implementa la interfaz Observador acorde al patrón de diseño Observer.
+ */
 public class Espectador implements Observador{
     /**Identificador del espectador. */
     private String id;
