@@ -88,12 +88,11 @@ public class Personaje{
     }
 
     public void recibeDanio(double danio){
-        hp -= danio;
-        System.out.println(nombre + " : " + hp);
+        hp = Math.max(0,hp-danio);
     }
 
     public void recibeCuracion(double curacion){
-        hp += curacion;
+        hp = Math.min(100,hp+curacion);;
     }
 
     public String getNombre(){

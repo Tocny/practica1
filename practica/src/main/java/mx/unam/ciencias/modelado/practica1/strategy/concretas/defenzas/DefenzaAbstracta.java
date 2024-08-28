@@ -20,7 +20,7 @@ public abstract class DefenzaAbstracta implements Defenza{
     /**Implementacion de la defenza. */
     @Override public String ejecutaDefenza(Personaje agredido, Personaje agresor){
         agredido.recibeCuracion(DANIO_REDUCIDO);
-        return agredido.getEstado() + " Usó " + nombreDefenza() + " contra el ataque de " + agresor.getEstado() + " y recibió la mitad del daño.";
+        return agredido.getEstado() + " Usó " + nombreDefenza() + " para defenderse contra el ataque de " + agresor.getEstado();
     }
 
     /**Getter del nombre de la defenza. */
