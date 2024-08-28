@@ -15,7 +15,7 @@ public abstract class ObjetoAbstracto implements Objeto{
     /**Implementacion de la defenza. */
     @Override public String consumirObjeto(Personaje consumidor){
         objetoConcreto(consumidor);
-        return consumidor.getEstado() + " Usó el item " + nombreObjeto() + ", " + descripcion();
+        return "✦ " + consumidor.getNombre() + " Usó el item " + nombreObjeto() + ", " + descripcion();
     }
 
     /**Método concreto del poder y su uso particular. */

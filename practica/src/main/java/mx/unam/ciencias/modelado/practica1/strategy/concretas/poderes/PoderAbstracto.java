@@ -14,7 +14,7 @@ public abstract class PoderAbstracto implements Poder{
     /**Implementacion del ataque. */
     @Override public String ejecutaPoder(Personaje emisor, Personaje objetivo){
         poderConcreto(objetivo);
-        return emisor.getEstado() + " Usó el poder especial " + nombrePoder() + " contra " + objetivo.getEstado();
+        return "➳ " + emisor.getNombre() + " Usó el poder especial " + nombrePoder() + " contra " + objetivo.getNombre();
     }
 
     /**Getter del nombre del poder. */

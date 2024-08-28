@@ -14,7 +14,7 @@ public class Simulador{
     /**Lista de personajes. */
     private List<Personaje> personajes;
     /**Objetos que pueden desplegarse durante la simulación. */
-    private List<Accion> objetos;
+    private List<Objeto> objetos;
     /**Instancia de random. */
     private Random random;
 
@@ -29,6 +29,9 @@ public class Simulador{
         this.random = new Random();
         objetos = new ArrayList<>();
         listaObjetos();
+        for(Personaje personaje : personajes){
+            personaje.setItems(objetos);
+        }
     }
 
     /**Método que empieza la simulación aleatoria. */
@@ -106,7 +109,6 @@ public class Simulador{
 
         //Acción aleatoria.
         List<Accion> acciones = personaje.getAcciones();
-        acciones.addAll(objetos);
         int indiceAleatorio = random.nextInt(acciones.size());
         Accion accionAleatoria = acciones.get(indiceAleatorio);
 
@@ -127,8 +129,7 @@ public class Simulador{
             }
 
         } else if(accionAleatoria instanceof Objeto){
-            Objeto objeto = (Objeto) accionAleatoria;
-            evento = objeto.consumirObjeto(personaje);
+            evento = personaje.ejecutaAccion(accionAleatoria, personaje);
         }
 
         combate.notificarObservadores(evento);

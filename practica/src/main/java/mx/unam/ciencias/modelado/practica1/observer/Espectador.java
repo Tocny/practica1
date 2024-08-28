@@ -12,6 +12,8 @@ public class Espectador implements Observador{
     private Personaje personajeFavorito;
     /**La bitácora de eventos del combate. */
     private List<String> bitacora;
+    /**Terminacion del archivo bitácora. */
+    private String terminacion = ".txt";
 
     /**Constructor de la clase, inicializa los atributos. */
     public Espectador(String id, Personaje personajeFavorito){
@@ -26,7 +28,8 @@ public class Espectador implements Observador{
      * @param novedad una cadena con un evento.
      */
     public void actualizar(String novedad){
-        bitacora.add(novedad);
+        String notificación = novedad + "\t" +personajeFavorito.getEstado();
+        bitacora.add(notificación);
     }
 
     /**Método para finalizar el combate con un mensaje personalizado. */
@@ -54,6 +57,6 @@ public class Espectador implements Observador{
 
     /**Método para guardar la bitácora en una archivo. */
     public void generaArchivo(){
-        ReaderWriter.write(toString(), id);
+        ReaderWriter.write(toString(), id + terminacion);
     }
 }

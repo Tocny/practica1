@@ -17,13 +17,13 @@ public class Main{
         personajes.add(megaman);
         personajes.add(dittuu);
 
-        Espectador tilin = new Espectador("tilin", kirby);
-        Espectador pepe = new Espectador("pepe", megaman);
-        Espectador coca = new Espectador("coca", dittuu);
+        Espectador marco = new Espectador("Marco", kirby);
+        Espectador guillermo = new Espectador("Guillermo", megaman);
+        Espectador adam = new Espectador("Adam", dittuu);
         Combate combate = new Combate();
-        combate.registrarObservador(tilin);
-        combate.registrarObservador(pepe);
-        combate.registrarObservador(coca);
+        combate.registrarObservador(marco);
+        combate.registrarObservador(guillermo);
+        combate.registrarObservador(adam);
 
         Simulador simulacion = new Simulador(combate, personajes);
         simulacion.simular();
