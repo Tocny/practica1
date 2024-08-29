@@ -4,6 +4,7 @@ import mx.unam.ciencias.modelado.practica1.personajes.Personaje;
 import mx.unam.ciencias.modelado.practica1.strategy.interfaces.Poder;
 import java.util.ArrayList;
 
+/**Clase del poder concreto Copiar. extiende de {@link PoderAbstracto} */
 public class Copiar extends PoderAbstracto{
     /**Personaje base. */
     private Personaje personaje;
@@ -12,7 +13,11 @@ public class Copiar extends PoderAbstracto{
     /**La efectividad del poder sobre otro Personaje. */
     private String estadoDeEfectividad = "";
 
-    /**Para este poder si necesitamos una relacion fuerte entre las clases. */
+    /**
+     * Para este poder si necesitamos una relacion fuerte entre las clases. 
+     * @param personaje el personaje asociado al poder.
+     * @param nombrePoder el nombre concreto del personaje.
+     */
     public Copiar(Personaje personaje, String nombrePoder){
         this.personaje = personaje;
         this.nombrePoder = nombrePoder;
@@ -32,7 +37,10 @@ public class Copiar extends PoderAbstracto{
         }
     }
 
-    /**Implementación del método nombrePoder. */
+    /**
+     * Implementación del método nombrePoder.
+     * @return Una cadena con el nombre concreto del poder y si este fué o no efectivo.
+     */
     @Override public String nombrePoder(){
         return nombrePoder + estadoDeEfectividad;
     }

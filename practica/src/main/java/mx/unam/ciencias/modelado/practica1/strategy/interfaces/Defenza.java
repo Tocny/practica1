@@ -27,6 +27,9 @@ public interface Defenza extends Accion{
     public void setDanioReducido(double danioReducido);
 
 
-    /**Getter del nombre de la defenza. */
+    /**
+     * Getter del nombre de la defenza.
+     * @return el nombre de la defenza.
+     */
     public String nombreDefenza();
 }

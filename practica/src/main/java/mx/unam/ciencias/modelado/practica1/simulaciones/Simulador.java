@@ -124,7 +124,7 @@ public class Simulador{
             evento = personaje.ejecutaAccion(accionAleatoria, objetivo);
 
             if(objetivoSeDefiende){
-                evento += "\n" + objetivo.defenza(personaje);
+                evento += "\n" + objetivo.ejecutaAccion(objetivo.getDefenza(), personaje);
             }
 
             if(objetivo.getHP() <= 0){

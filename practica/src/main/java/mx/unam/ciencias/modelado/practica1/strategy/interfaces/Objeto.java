@@ -23,9 +23,12 @@ public interface Objeto extends Accion{
     /**
      * Getter del nombre del objeto. 
      * @return una cadena con el nombre del objeto.
-     * */
+     */
     public String nombreObjeto();
 
-    /**Getter de la descripcion del objeto. */
+    /**
+     * Getter de la descripcion del objeto.
+     * @return una cadena descriptiva.
+     */
     public String descripcion();
 }

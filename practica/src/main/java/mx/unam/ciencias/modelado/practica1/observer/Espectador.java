@@ -18,7 +18,11 @@ public class Espectador implements Observador{
     /**Terminacion del archivo bitácora. */
     private String terminacion = ".txt";
 
-    /**Constructor de la clase, inicializa los atributos. */
+    /**
+     * Constructor de la clase, inicializa los atributos.
+     * @param id el identificador del espectador.
+     * @param personajeFavorito el personaje que apoya.
+     */
     public Espectador(String id, Personaje personajeFavorito){
         this.id = id;
         this.personajeFavorito = personajeFavorito;
