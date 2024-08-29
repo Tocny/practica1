@@ -49,16 +49,13 @@ public class Personaje{
         String evento = "";
 
         if(accion == this.defenza){
-            evento = defenza.ejecutaDefenza(this, objetivo);
+            evento = defenza(objetivo);
 
         } else if(accion == this.ataque){
-            evento = ataque.ejecutaAtaque(this, objetivo);
+            evento = ataque(objetivo);
 
         } else if(poderes.contains(accion)){
-            Poder poder = (Poder) accion;
-            int indice = poderes.indexOf(poder);
-            Poder power = poderes.get(indice);
-            evento = power.ejecutaPoder(this, objetivo);
+            evento = poder((Poder) accion, objetivo);
 
         } else if(items.contains(accion)){
             Objeto objeto = (Objeto) accion;
@@ -66,6 +63,43 @@ public class Personaje{
         }
 
         return evento;
+    }
+
+    /**
+     * Método que ejecuta la defenza.
+     * @param agresor el personaje que lanzó un ataque.
+     * @return la descripción de la acción.
+     */
+    public String defenza(Personaje agresor){
+        return defenza.ejecutaDefenza(this, agresor);
+    }
+
+    /**
+     * Método que ejecuta el ataque basico.
+     * @param objetivo el objetivo del ataque.
+     * @return la descripción de la acción.
+     */
+    public String ataque(Personaje objetivo){
+        return ataque.ejecutaAtaque(this,objetivo);
+    }
+
+    /**
+     * Método que ejecuta un poder.
+     * @param poder el poder a ejecutar
+     * @param objetivo el objetivo del poder.
+     * @return la descripción de la acción.
+     */
+    public String poder(Poder poder, Personaje objetivo){
+        return poder.ejecutaPoder(this, objetivo);
+    }
+
+    /**
+     * Método que consume un objeto.
+     * @param objeto el objeto.
+     * @return la descripción de la acción.
+     */
+    public String objeto(Objeto objeto){
+        return objeto.consumirObjeto(this);
     }
 
     /**
