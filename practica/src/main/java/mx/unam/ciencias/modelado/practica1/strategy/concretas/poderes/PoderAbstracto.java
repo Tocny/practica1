@@ -8,6 +8,7 @@ import mx.unam.ciencias.modelado.practica1.personajes.Personaje;
  * Todas las defenzas funcionan igual, por eso se abstrae esta clase.
  */
 public abstract class PoderAbstracto implements Poder{
+    
     /**Constructor de la clase */
     public PoderAbstracto() {}
 
