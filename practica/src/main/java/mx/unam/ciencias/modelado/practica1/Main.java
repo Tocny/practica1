@@ -6,8 +6,10 @@ import mx.unam.ciencias.modelado.practica1.observer.*;
 
 import java.util.ArrayList;
 
+/**Clase Main */
 public class Main{
 
+    /**Método para la simulación de un combate. */
     public static void simulacion(){
         Personaje kirby = new Korby();
         Personaje megaman = new MeganMan();
@@ -31,6 +33,7 @@ public class Main{
         simulacion.simular();
     }
 
+    /**Método principal, ejecuta todo el programa. */
     public static void main(String[] args){
         simulacion();
         simulacion();
