@@ -30,6 +30,6 @@ public class Panacea extends ObjetoAbstracto{
      * @return Una cadena que describe la función del objeto Panacea.
      */
     @Override public String descripcion(){
-        return "se restauraron" + CURACION + "puntos de vida.";
+        return "se restauraron " + CURACION + " puntos de vida.";
     }
 }

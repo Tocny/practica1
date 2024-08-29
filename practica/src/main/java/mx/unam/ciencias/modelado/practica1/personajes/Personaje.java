@@ -49,38 +49,23 @@ public class Personaje{
         String evento = "";
 
         if(accion == this.defenza){
-            evento = defenza(objetivo);
+            evento = defenza.ejecutaDefenza(this, objetivo);
 
         } else if(accion == this.ataque){
-            evento = ataque(objetivo);
+            evento = ataque.ejecutaAtaque(this, objetivo);
 
         } else if(poderes.contains(accion)){
-            int indice = poderes.indexOf(accion);
-            Poder poder = poderes.get(indice);
-            evento = poder.ejecutaPoder(this, objetivo);
+            Poder poder = (Poder) accion;
+            int indice = poderes.indexOf(poder);
+            Poder power = poderes.get(indice);
+            evento = power.ejecutaPoder(this, objetivo);
 
         } else if(items.contains(accion)){
-            Objeto item = (Objeto) accion;
-            evento = item.consumirObjeto(this);
+            Objeto objeto = (Objeto) accion;
+            evento = objeto.consumirObjeto(this);
         }
 
         return evento;
-    }
-
-    /**
-     * Método particular de la defenza.
-     * @param agresor el personaje que está emitiendo el ataque sobre el de la clase.
-     */
-    public String defenza(Personaje agresor){
-        return defenza.ejecutaDefenza(this, agresor);
-    }
-
-    /**
-     * Método particular de la defenza.
-     * @param objetivo el personaje sobre quien se ejecuta el ataque.
-     */
-    public String ataque(Personaje objetivo){
-        return ataque.ejecutaAtaque(this, objetivo);
     }
 
     /**
@@ -171,7 +156,10 @@ public class Personaje{
         this.ganador = ganador;
     }
 
-    /**Indicador si el atributo ganador es verdadero. */
+    /**
+     * Indicador si el atributo ganador es verdadero. 
+     * @return si dicho personaje ha ganado.
+     */
     public boolean esGanador(){
         return ganador == true;
     }

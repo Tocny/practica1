@@ -29,7 +29,7 @@ public class BombaSmash extends ObjetoAbstracto{
     @Override public void objetoConcreto(Personaje consumidor){
         for(Personaje personaje : personajes){
             if(!(personaje == consumidor)){
-                personaje.recibeDanio(40);
+                personaje.recibeDanio(DANIO);
             }
         }
     }

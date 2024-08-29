@@ -34,6 +34,6 @@ public class SuperMushroom extends ObjetoAbstracto{
      * @return Una cadena que decribe el objeto SuperMushroom.
      */
     @Override public String descripcion(){
-        return "Se incrementó su daño de ataque X" + INCREMENTO + ".";
+        return "Se incrementó su daño de ataque x" + INCREMENTO + ".";
     }
 }

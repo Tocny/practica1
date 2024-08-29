@@ -20,10 +20,12 @@ public class Main{
         Espectador marco = new Espectador("Marco", kirby);
         Espectador guillermo = new Espectador("Guillermo", megaman);
         Espectador adam = new Espectador("Adam", dittuu);
+        Espectador christian = new Espectador("Christian", megaman);
         Combate combate = new Combate();
         combate.registrarObservador(marco);
         combate.registrarObservador(guillermo);
         combate.registrarObservador(adam);
+        combate.registrarObservador(christian);
 
         Simulador simulacion = new Simulador(combate, personajes);
         simulacion.simular();
